@@ -2,7 +2,6 @@
 # refactored from https://github.com/amsqr/NaiveSumm
 # because NLTK module is too heavy to be loaded
 
-import sys
 import re
 
 def rangkum(text, jml_kalimat):
