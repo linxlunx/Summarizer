@@ -37,9 +37,14 @@ class Summarize():
                     if segmented[n] not in extracted and item in segmented[n]:
                         extracted.append(segmented[n])
                         break
-        extracted.sort(lambda s1, s2: article.find(s1) - article.find(s2))
+        
+        temp_sent = {}
+        for e in extracted:
+            temp_sent[e] = segmented.index(e)
+        
+        summ = sorted(temp_sent, key=temp_sent.__getitem__)
 
-        return extracted
+        return summ
 
 if __name__ == '__main__':
     with open('article.txt', 'r') as a:
